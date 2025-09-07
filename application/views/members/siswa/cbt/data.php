@@ -417,7 +417,7 @@ $cbt_setting = [];
                     $(document).ready(function() {
                         function loadToken() {
                             $.ajax({
-                                url: base_url + "siswamod/cektokenmod/",
+                                url: base_url + "siswa/getatoken/",
                                 type: "GET",
                                 success: function(response) {
                                     tokenResponse = response;

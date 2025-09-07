@@ -4346,3 +4346,15 @@ WHERE `id_jadwal` IN()
 AND `id_siswa` = '1'
 ERROR - 2025-09-07 14:34:57 --> Severity: Compile Error --> Access level to Siswa::maybe_unserialize() must be protected (as in class MY_Controller) or weaker C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 2040
 ERROR - 2025-09-07 14:35:01 --> Severity: Compile Error --> Access level to Siswa::maybe_unserialize() must be protected (as in class MY_Controller) or weaker C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 2040
+ERROR - 2025-09-07 15:13:10 --> Severity: Warning --> Undefined property: Siswa::$cbt C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 722
+ERROR - 2025-09-07 15:13:10 --> Severity: error --> Exception: Call to a member function getToken() on null C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 722
+ERROR - 2025-09-07 15:14:17 --> Severity: Warning --> Undefined property: Siswa::$cbt C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 722
+ERROR - 2025-09-07 15:14:17 --> Severity: error --> Exception: Call to a member function getToken() on null C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 722
+ERROR - 2025-09-07 15:17:58 --> Severity: Warning --> Undefined property: Siswa::$cbt C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 722
+ERROR - 2025-09-07 15:17:58 --> Severity: error --> Exception: Call to a member function getToken() on null C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\controllers\Siswa.php 722
+ERROR - 2025-09-07 15:23:24 --> Severity: 8192 --> urlencode(): Passing null to parameter #1 ($string) of type string is deprecated C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\views\cbt\banksoal\data.php 39
+ERROR - 2025-09-07 15:23:24 --> Severity: 8192 --> urlencode(): Passing null to parameter #1 ($string) of type string is deprecated C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\views\cbt\banksoal\data.php 55
+ERROR - 2025-09-07 15:23:24 --> Severity: 8192 --> urlencode(): Passing null to parameter #1 ($string) of type string is deprecated C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\views\cbt\banksoal\data.php 59
+ERROR - 2025-09-07 15:23:27 --> Severity: 8192 --> urlencode(): Passing null to parameter #1 ($string) of type string is deprecated C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\views\cbt\banksoal\data.php 39
+ERROR - 2025-09-07 15:23:27 --> Severity: 8192 --> urlencode(): Passing null to parameter #1 ($string) of type string is deprecated C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\views\cbt\banksoal\data.php 55
+ERROR - 2025-09-07 15:23:27 --> Severity: 8192 --> urlencode(): Passing null to parameter #1 ($string) of type string is deprecated C:\Users\IKASMEDIA\Documents\GitHub\cbt\application\views\cbt\banksoal\data.php 59

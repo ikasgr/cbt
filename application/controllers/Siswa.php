@@ -265,20 +265,6 @@ class Siswa extends MY_Controller
 
             $kbm->istirahat = $this->maybe_unserialize($kbm->istirahat ?? '');
             $logs = $this->kelas->getRekapBulananSiswa(null, $siswa->id_kelas, $tahun, $bulan);
-            /*
-            $mapel_bulan_ini = [];
-            $infos = $this->kelas->getJadwalMapelByMapel($siswa->id_kelas, null, $tp->id_tp, $smt->id_smt);
-            foreach ($infos as $info) {
-                $dates = $this->total_hari($info->id_hari, $bulan, $tahun);
-                foreach ($dates as $date) {
-                    $d = explode('-', $date);
-                    $mapel_bulan_ini[$info->id_mapel][$d[2]][$info->jam_ke] = $date;
-                    $res = $this->kelas->getAllMateriByTgl($siswa->id_kelas, $date, $arrIdMapel);
-                    $materi_sebulan[$date] = $res;
-                }
-            }
-            */
-
             $data['sebulan'] = [
                 "log"=> isset($logs[$siswa->id_siswa]) ? $logs[$siswa->id_siswa] : [],
                 "materis"=>$materi_sebulan,
@@ -730,6 +716,18 @@ class Siswa extends MY_Controller
         $this->load->view('members/siswa/templates/header', $data);
         $this->load->view('members/siswa/cbt/data');
         $this->load->view('members/siswa/templates/footer');
+    }
+
+    public function getAToken(){
+        $this->load->model('Cbt_model', 'cbt');
+        $token = $this->cbt->getToken();
+        if ($token == null) {
+            $data['token'] = 'ABCDEF';
+            $data['auto'] = '0';
+            $this->output_json($data);
+        } else {
+            $this->output_json($token);
+        }
     }
 
     public function konfirmasi($id_jadwal){
@@ -1875,10 +1873,6 @@ class Siswa extends MY_Controller
         $all_jawabans_siswa = [];
         $skors = [];
 
-        // =================================================================
-        // PERBAIKAN UTAMA: Cek apakah $arr_jadwal tidak kosong sebelum menjalankan query
-        // Ini untuk mencegah error SQL "WHERE IN ()" jika tidak ada jadwal yang valid.
-        // =================================================================
         if (!empty($arr_jadwal)) {
             $durasies = $this->cbt->getDurasiSiswaByArrJadwal($arr_jadwal, $siswa->id_siswa);
             $nilai_inputs = $this->cbt->getNilaiSiswaByArrJadwal($arr_jadwal, $siswa->id_siswa);
